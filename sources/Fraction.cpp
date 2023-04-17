@@ -6,6 +6,7 @@
 namespace ariel
 {
     Fraction::Fraction(int a, int b) : numerator(a), denominator(b) {}
+    Fraction::Fraction(float value){}
 
     Fraction Fraction::operator+(const Fraction &other) const {}
     Fraction Fraction::operator-(const Fraction &other) const {}
@@ -35,6 +36,19 @@ namespace ariel
     Fraction Fraction::operator-=(int n) {}
     Fraction Fraction::operator*=(int n) {}
     Fraction Fraction::operator/=(int n) {}
+
+    Fraction operator+(float leftSide, const Fraction &rightSide){}
+    Fraction operator-(float leftSide, const Fraction &rightSide){}
+    Fraction operator*(float leftSide, const Fraction &rightSide){}
+    Fraction operator/(float leftSide, const Fraction &rightSide){}
+    Fraction Fraction::operator+(float rightSide) const{}
+    Fraction Fraction::operator-(float rightSide) const{}
+    Fraction Fraction::operator*(float rightSide) const{}
+    Fraction Fraction::operator/(float rightSide) const{}
+    Fraction Fraction::operator+=(float rightSide){}
+    Fraction Fraction::operator-=(float rightSide){}
+    Fraction Fraction::operator*=(float rightSide){}
+    Fraction Fraction::operator/=(float rightSide){}
 
     Fraction Fraction::operator++(int) {}
     Fraction &Fraction::operator--() {}

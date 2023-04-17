@@ -163,6 +163,56 @@ TEST_CASE("Fraction to float conversion") {
     CHECK(result_b == doctest::Approx(-4.0f / 7.0f));
 }
 
+TEST_CASE("Fraction and float operations") {
+    Fraction a(3, 4);
+    float b = 0.5f;
+
+    Fraction c = a + b;
+    Fraction d = b + a;
+    CHECK(c == Fraction(5, 4));
+    CHECK(d == Fraction(5, 4));
+
+    c = a - b;
+    d = b - a;
+    CHECK(c == Fraction(1, 4));
+    CHECK(d == Fraction(-1, 4));
+
+    c = a * b;
+    d = b * a;
+    CHECK(c == Fraction(3, 8));
+    CHECK(d == Fraction(3, 8));
+
+    c = a / b;
+    d = b / a;
+    CHECK(c == Fraction(3, 2));
+    CHECK(d == Fraction(2, 3));
+}
+
+TEST_CASE("Integer and Fraction operations") {
+    Fraction a(3, 4);
+    int b = 2;
+
+    Fraction c = a + b;
+    Fraction d = b + a;
+    CHECK(c == Fraction(11, 4));
+    CHECK(d == Fraction(11, 4));
+
+    c = a - b;
+    d = b - a;
+    CHECK(c == Fraction(-5, 4));
+    CHECK(d == Fraction(5, 4));
+
+    c = a * b;
+    d = b * a;
+    CHECK(c == Fraction(3, 2));
+    CHECK(d == Fraction(3, 2));
+
+    c = a / b;
+    d = b / a;
+    CHECK(c == Fraction(3, 8));
+    CHECK(d == Fraction(8, 3));
+}
+
 TEST_CASE("Fraction to output string") {
     Fraction a(7, 8);
     Fraction b(-5, 6);
