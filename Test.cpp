@@ -78,27 +78,35 @@ TEST_CASE("Fraction comparison")
     CHECK(b >= a);
     CHECK(a == a);
     CHECK(a != b);
-    CHECK(c > a && c > b);
-    CHECK(c >= a && c >= b);
-    CHECK(c != a && c != b);
-    CHECK(a <= c && b <= c);
+    CHECK(c > a);
+    CHECK(c > b);
+    CHECK(c >= a);
+    CHECK(c >= b);
+    CHECK(c != a);
+    CHECK(c != b);
+    CHECK(a <= c);
+    CHECK(b <= c);
 }
 
 TEST_CASE("Fraction increment/decrement")
 {
     Fraction a(3, 4);
     Fraction b(1, 2);
-    CHECK((a++ == Fraction(3, 4)) && (a == Fraction(7, 4)));
-    CHECK((--a == Fraction(3, 4)) && (a == Fraction(3, 4)));
-    CHECK((b-- == Fraction(1, 2)) && (b == Fraction(-1, 2)));
-    CHECK((++b == Fraction(1, 2)) && (b == Fraction(1, 2)));
+    CHECK(a++ == Fraction(3, 4));
+    CHECK(a == Fraction(7, 4));
+    CHECK(--a == Fraction(3, 4));
+    CHECK(a == Fraction(3, 4));
+    CHECK(b-- == Fraction(1, 2));
+    CHECK(b == Fraction(-1, 2));
+    CHECK(++b == Fraction(1, 2));
+    CHECK(b == Fraction(1, 2));
 }
 
 TEST_CASE("Fraction negative value") {
     Fraction a(5, 6);
     Fraction b(-4, 7);
-    CHECK(-a == Fraction(-5, 6));
-    CHECK(-b == Fraction(4, 7));
+    CHECK((-a) == Fraction(-5, 6));
+    CHECK((-b) == Fraction(4, 7));
 }
 
 TEST_CASE("Fraction reciprocal value") {

@@ -25,26 +25,18 @@ namespace ariel
         Fraction operator/=(const Fraction &other);
 
         bool operator==(const Fraction &other) const;
-        bool operator!=(const Fraction &f) const;
-        bool operator<(const Fraction &f) const;
-        bool operator<=(const Fraction &f) const;
-        bool operator>(const Fraction &f) const;
-        bool operator>=(const Fraction &f) const;
-        Fraction operator+() const;
-        Fraction operator-() const;
-
-        friend Fraction operator+(int leftSide, const Fraction &rightSide);
-        friend Fraction operator-(int leftSide, const Fraction &rightSide);
-        friend Fraction operator*(int leftSide, const Fraction &rightSide);
-        friend Fraction operator/(int leftSide, const Fraction &rightSide);
-        Fraction operator+(int n) const;
-        Fraction operator-(int n) const;
-        Fraction operator*(int n) const;
-        Fraction operator/(int n) const;
-        Fraction operator+=(int n);
-        Fraction operator-=(int n);
-        Fraction operator*=(int n);
-        Fraction operator/=(int n);
+        bool operator!=(const Fraction &other) const;
+        bool operator<(const Fraction &other) const;
+        bool operator<=(const Fraction &other) const;
+        bool operator>(const Fraction &other) const;
+        bool operator>=(const Fraction &other) const;
+        
+        friend bool operator==(const Fraction &other, float rightSide);
+        friend bool operator!=(const Fraction &other, float rightSide);
+        friend bool operator<(const Fraction &other, float rightSide);
+        friend bool operator<=(const Fraction &other, float rightSide);
+        friend bool operator>(const Fraction &other, float rightSide);
+        friend bool operator>=(const Fraction &other, float rightSide);
 
         friend Fraction operator+(float leftSide, const Fraction &rightSide);
         friend Fraction operator-(float leftSide, const Fraction &rightSide);
@@ -63,6 +55,8 @@ namespace ariel
         Fraction &operator--();
         Fraction operator--(int);
         Fraction &operator++();
+
+        Fraction operator-() const;
 
         int floor() const;
         int ceil() const;
