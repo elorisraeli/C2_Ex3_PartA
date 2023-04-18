@@ -175,6 +175,14 @@ namespace ariel
         return out;
     }
 
+    std::istream &operator>>(std::istream &istream, Fraction &f)
+    {
+        int numerator, denominator;
+        istream >> numerator >> denominator;
+        f = Fraction(numerator, denominator);
+        return istream;
+    }
+
     int Fraction::floor() const
     {
         return 1;

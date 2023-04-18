@@ -67,6 +67,8 @@ namespace ariel
         double toDouble() const;
         float toFloat() const;
         friend std::ostream &operator<<(std::ostream &out, const Fraction &f);
+        friend std::istream &operator>>(std::istream& istream, Fraction& f);
+
     };
 }
 
